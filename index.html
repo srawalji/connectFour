@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style type="text/css">
+			.frame {
+				background-color: yellow;
+				padding: 5px;
+			}
+		
+			section {
+				display: grid;
+				grid-template-columns: repeat(7, 1fr);
+			}
+		
+			section > div {
+				height: 100px;
+				width: 100px;
+				border-radius: 50%;
+				background-color: white;
+				float:left;
+				margin: 3px;
+				margin-left: 28px;
+				cursor: pointer;
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.js"></script>
+		<script type="text/babel">
+			for(let i = 0; i < 42; i++) {
+				var div = document.createElement("div");
+				var counter = 0;
+				div.onclick = function() {
+					if(counter % 2 == 0) {
+						this.style.backgroundColor = "red";
+						counter++;
+					}
+					else {
+						this.style.backgroundColor = "black";
+						counter++;
+					}
+				};
+				document.getElementsByTagName("section")[0].appendChild(div);
+			}
+		</script>
+		<title>Connect Four</title>
+	</head>
+	<body>
+		<header>
+			<h1 style="text-align:center;">Connect Four</h1>
+		</header>
+		<div class="frame">
+			<section></section>
+		<div>
+	</body>	
+</html>
